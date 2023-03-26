@@ -11,15 +11,15 @@ system WordPress and implements both Actions and Filters with a unified interfac
     // An action takes the information it receives, does something with it, 
     // and returns nothing. In other words, it executes something and then 
     // terminates without returning anything to the calling hook.
-    hooks.add('welcome', 'Action example', function() { console.log('hello'); });
+    hooks.register('welcome', 'Action example', function() { console.log('hello'); });
+
+    hooks.execute('welcome'); // output: hello
 
     // A filter takes the information it receives, changes it somehow, 
     // and returns it. In other words, it filters something and returns it 
     // to the hook for further use. 
-    hooks.add('modify', 'multiply by 2', function(value) { return value * 2; });
-    hooks.add('modify', 'add 10', function(value) { return value + 10; });
-
-    hooks.execute('welcome'); // output: hello
+    hooks.register('modify', 'multiply by 2', function(value) { return value * 2; });
+    hooks.register('modify', 'add 10', function(value) { return value + 10; });
 
     let v = hooks.execute('modify', 3);
     console.log(v); // output: 16
@@ -40,7 +40,11 @@ via unpkg or by using npm if desired.
 
 ### npm
 
-> TODO
+    const Hooks = require('./hooks');
+
+    var hooks = new Hooks();
+    hooks.register('welcome', 'Action example', function() { console.log('hello'); });
+    hooks.execute('welcome'); // output: hello
 
 ## Real World Example
 

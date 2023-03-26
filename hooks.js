@@ -1,3 +1,5 @@
+'use strict';
+
 class Hooks {
 
     constructor() {
@@ -41,3 +43,6 @@ class Hooks {
         return result;
     }
 }
+
+if (typeof module !== "undefined")
+    module.exports = Hooks;

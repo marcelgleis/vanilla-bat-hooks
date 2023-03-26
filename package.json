@@ -1,8 +1,9 @@
 {
   "name": "vanilla-bat-hooks",
   "description": "A ultra-lightweight Hooks Library written in vanilla javascript which allows you to make your software extensible.",
+  "repository": "https://github.com/marcelgleis/vanilla-bat-hooks",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "hooks.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
