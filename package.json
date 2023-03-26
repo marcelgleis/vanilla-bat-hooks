@@ -1,0 +1,20 @@
+{
+  "name": "vanilla-bat-hooks",
+  "description": "A ultra-lightweight Hooks Library written in vanilla javascript which allows you to make your software extensible.",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "VanillaJS",
+    "Hooks",
+    "Plugins",
+    "Actions",
+    "Filters",
+    "Leightweight",
+    "Library"
+  ],
+  "author": "Marcel Gleis",
+  "license": "Unlicense"
+}
