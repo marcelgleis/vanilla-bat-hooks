@@ -53,4 +53,18 @@ it('should add 1+4 to a 0 with filters', function() {
     return result == 5;
 }());
 
-done();
+it('should handle next', async function() {
+
+    var hooks = new Hooks();
+    hooks.register('filter', 'Increase by 1', function(next, value) {
+        setTimeout(() => next(value + 1), 100);
+    });
+
+    hooks.executeAsync('filter', 0);
+
+    return result == 5;
+}());
+
+
+
+setTimeout(() => done(), 1000);

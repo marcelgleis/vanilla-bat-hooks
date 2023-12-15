@@ -1,7 +1,6 @@
 # /\\^._.^/\ vanilla-bat-hooks ⤖ 
 
-A ultra-lightweight Hooks Library written in vanilla javascript which allows you 
-to make your software extensible.
+Make your software extensible by Hooks with this ultra-lightweight javascript library.
 
 The idea is based on the popular hook mechanism of the content management
 system WordPress and implements both Actions and Filters with a unified interface:
@@ -28,14 +27,14 @@ See chapter "Real World Examples" for more examples.
 
 ## __/\\^._.^/\ vanilla-bat-* series__
 This library is part of the vanilla-bat-* series which contain only ultra-lightweight
-(like a bat) scripts written in good old plain JavaScript (also called VanillaJS).
+(like a bat) scripts with less than 1kb zipped written in good old plain JavaScript 
+(also called VanillaJS).
 These can be used without any package manager by just including the javascript directly
 via unpkg or by using npm if desired.
 
 ## How to install
 
 ### Direct usage via CDN / unpkg
-
 
     <script src="https://www.unpkg.com/vanilla-bat-hooks"></script>
     <script>

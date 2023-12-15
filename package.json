@@ -1,8 +1,8 @@
 {
   "name": "vanilla-bat-hooks",
-  "description": "A ultra-lightweight Hooks Library written in vanilla javascript which allows you to make your software extensible.",
+  "description": "Make your software extensible by Hooks with this ultra-lightweight javascript library.",
   "repository": "https://github.com/marcelgleis/vanilla-bat-hooks",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "hooks.js",
   "scripts": {
     "test": "node test.js"
@@ -17,5 +17,8 @@
     "Library"
   ],
   "author": "Marcel Gleis",
-  "license": "Unlicense"
+  "license": "Unlicense",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }

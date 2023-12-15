@@ -47,6 +47,48 @@ class Hooks {
 
         return result;
     }
+
+    executeAsync(hookName, value, ...args) {
+        let isNotInternal = !hookName.startsWith('hooks_');
+        let result = value;
+
+        isNotInternal && this.execute.call(this, 'hooks_actions_execute', ...arguments);
+
+        if (!this.hookActionsMap.hasOwnProperty(hookName))
+            return;
+
+        let argsWithoutHookName = Array.from(arguments);
+        argsWithoutHookName.shift();
+
+        let actions = this.hookActionsMap[hookName];
+        let chain = [];
+        for (var i = 0; i < actions.length; i++) {
+            let actionDef = actions[i];
+
+            chain.push(function(next) {
+                isNotInternal && this.execute.call(this, 'hooks_action_execute', actionDef, argsWithoutHookName);
+                result = actionDef.callback.apply(this, argsWithoutHookName);
+                isNotInternal && this.execute.call(this, 'hooks_action_executed', actionDef, result, argsWithoutHookName);
+
+            });
+
+            argsWithoutHookName[0] = result;
+        }
+
+        isNotInternal && this.execute.call(this, 'hooks_actions_executed', ...arguments);
+
+        return result;
+    }
+
+    function series(arr, value) {
+
+        arr[0](function(next, value) {
+            shift(arr);
+            series(arr, value);
+        }, value);
+
+    }
+
 }
 
 if (typeof module !== "undefined")
